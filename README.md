@@ -25,7 +25,8 @@
 ### **Для запуска тестов локально необходимо выполнить следующее:**
 * Склонировать репозиторий любым удобным способом
 
-![image](https://github.com/user-attachments/assets/c9d9f9b4-d2d2-40e9-bfb3-ca84ace43fb0)
+![image](https://github.com/user-attachments/assets/9bfb27db-8cdc-43ce-8ea3-6dfea49a4fa1)
+
 
 * Запуск всех тестов
 
