@@ -3,7 +3,7 @@ import pytest
 import allure
 import dotenv
 from faker import Faker
-from test_UI_khalimulindd_pw.pages.create_account_page import CreateAccount as CA
+from pages.create_account_page import CreateAccount as CA
 
 # Создаем объект Faker
 fake = Faker()

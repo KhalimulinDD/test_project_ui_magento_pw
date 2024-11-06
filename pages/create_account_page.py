@@ -1,7 +1,7 @@
 import allure
 from playwright.sync_api import expect
-from test_UI_khalimulindd_pw.pages.base_page import BasePage
-from test_UI_khalimulindd_pw.pages.locators import create_account_locators as loc
+from pages.base_page import BasePage
+from pages.locators import create_account_locators as loc
 
 
 class CreateAccount(BasePage):

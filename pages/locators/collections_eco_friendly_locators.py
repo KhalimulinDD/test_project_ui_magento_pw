@@ -1,4 +1,3 @@
-
 first_element_loc = '//ol[@class="products list items product-items"]/descendant::div[1]/descendant::strong'
 compare_product_loc = '//*[@aria-labelledby="block-compare-heading"]/descendant::li/child::strong/child::a'
 men_loc = '#ui-id-5'

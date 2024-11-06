@@ -1,7 +1,7 @@
 import pytest
-from test_UI_khalimulindd_pw.pages.sale_page import SalePage
-from test_UI_khalimulindd_pw.pages.create_account_page import CreateAccount
-from test_UI_khalimulindd_pw.pages.collections_eco_friendly_page import CollectionsEcoFriendly
+from pages.sale_page import SalePage
+from pages.create_account_page import CreateAccount
+from pages.collections_eco_friendly_page import CollectionsEcoFriendly
 
 
 @pytest.fixture()

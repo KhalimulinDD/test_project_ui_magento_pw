@@ -1,7 +1,7 @@
 import allure
 from playwright.sync_api import Page, expect, BrowserContext
-from test_UI_khalimulindd_pw.pages.base_page import BasePage
-from test_UI_khalimulindd_pw.pages.locators import collections_eco_friendly_locators as loc
+from pages.base_page import BasePage
+from pages.locators import collections_eco_friendly_locators as loc
 
 
 class CollectionsEcoFriendly(BasePage):
