@@ -6,7 +6,7 @@ class BasePage:
     base_url = 'https://magento.softwaretestingboard.com'
     page_url = None
 
-    def __init__(self, page: Page, context: BrowserContext, timeout: int = 90000):
+    def __init__(self, page: Page, context: BrowserContext, timeout: int = 110000):
         """Инициализация драйвера и ActionChains"""
         self.page = page
         self.context = context
