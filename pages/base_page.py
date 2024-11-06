@@ -64,16 +64,16 @@ class BasePage:
         assert prices == sorted(prices), f"Prices are not sorted: {prices}"
 
     @allure.step('Open and go to a new tab and return an element')
-    def wait_for_new_page_and_get_element(self, locator: str, timeout: int = 90000):
+    def wait_for_new_page_and_get_element(self, locator: str, timeout: int = 60000):
         """Ожидает открытия новой страницы и возвращает элемент по локатору."""
-        with self.context.expect_page() as new_page_event:
+        with self.context.expect_page(timeout=timeout) as new_page_event:
             new_page = new_page_event.value
 
         # Переключение на новую вкладку
         new_page.bring_to_front()
 
         # Ожидание загрузки новой страницы
-        new_page.wait_for_load_state("load", timeout=timeout)
+        new_page.wait_for_load_state("load", timeout=self.timeout)
 
         # Поиск элемента по локатору (строка)
         result = new_page.locator(locator)
