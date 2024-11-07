@@ -65,40 +65,21 @@ class BasePage:
 
     @allure.step('Open and go to a new tab and return an element')
     def wait_for_new_page_and_get_element(self, locator: str, timeout: int = 150000):
-        """Метод для ожидания открытия новой вкладки и поиска элемента"""
-        # Ждём событие открытия новой вкладки
-        new_page = self.page.wait_for_event("popup", timeout=timeout)
+        """Ожидает открытия новой страницы и возвращает элемент по локатору."""
+        with self.context.expect_page(timeout=timeout) as new_page_event:
+            new_page = new_page_event.value
 
         # Переключение на новую вкладку
         new_page.bring_to_front()
 
         # Ожидание загрузки новой страницы
+        new_page.bring_to_front()
         new_page.wait_for_load_state("load", timeout=timeout)
 
-        # Поиск элемента по локатору
+        # Поиск элемента по локатору (строка)
         result = new_page.locator(locator)
 
         # Ожидание появления элемента
         expect(result).to_be_visible(timeout=5000)
 
         return result
-
-    # def wait_for_new_page_and_get_element(self, locator: str, timeout: int = 150000):
-    #     """Ожидает открытия новой страницы и возвращает элемент по локатору."""
-    #     with self.context.expect_page(timeout=timeout) as new_page_event:
-    #         new_page = new_page_event.value
-    #
-    #     # Переключение на новую вкладку
-    #     new_page.bring_to_front()
-    #
-    #     # Ожидание загрузки новой страницы
-    #     new_page.bring_to_front()
-    #     new_page.wait_for_load_state("load", timeout=timeout)
-    #
-    #     # Поиск элемента по локатору (строка)
-    #     result = new_page.locator(locator)
-    #
-    #     # Ожидание появления элемента
-    #     expect(result).to_be_visible(timeout=5000)
-    #
-    #     return result
