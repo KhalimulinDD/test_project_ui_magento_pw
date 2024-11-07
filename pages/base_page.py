@@ -83,3 +83,15 @@ class BasePage:
         expect(result).to_be_visible(timeout=5000)
 
         return result
+
+    @staticmethod
+    @allure.step('Taking a screenshot of the page')
+    def take_screenshot_and_close(context):
+        """Создает скриншот текущей страницы и закрывает ее."""
+        current_page = context.pages[-1]  # Берем последнюю открытую вкладку
+        allure.attach(
+            current_page.screenshot(full_page=True),
+            name="Screenshot",
+            attachment_type=allure.attachment_type.PNG
+        )
+        current_page.close()
