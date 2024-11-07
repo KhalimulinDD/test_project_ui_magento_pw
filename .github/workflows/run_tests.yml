@@ -86,15 +86,15 @@ jobs:
         uses: actions/download-artifact@v4  
       - name: Run all tests
         if: "github.event.inputs.deployment_target == 'all'"
-        run: pytest --alluredir=allure-results
+        run: pytest --alluredir=allure-results --headless
         continue-on-error: true
       - name: Run smoke tests
         if: "github.event.inputs.deployment_target == 'smoke'"
-        run: pytest -m smoke --alluredir=allure-results
+        run: pytest -m smoke --alluredir=allure-results --headless
         continue-on-error: true
       - name: Run regression tests
         if: "github.event.inputs.deployment_target == 'regression'"
-        run: pytest -m regression --alluredir=allure-results
+        run: pytest -m regression --alluredir=allure-results --headless
         continue-on-error: true
       - name: Store allure results
         uses: actions/upload-artifact@v4
